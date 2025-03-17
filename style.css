@@ -1,44 +1,266 @@
-body {
-    font-family: sans-serif;
+/* Reset básico e variáveis */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
+:root {
+    --cor-primaria: #007bff; /* Azul */
+    --cor-secundaria: #6c757d; /* Cinza */
+    --cor-fundo: #f8f9fa; /* Cinza claro */
+    --cor-texto: #343a40; /* Cinza escuro */
+    --cor-branca: #fff;
+    --fonte-principal: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Estilos do Cabeçalho (Header) */
 header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    background-color: var(--cor-branca);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Fixa o cabeçalho no topo */
+    top: 0;
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
-main {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.logo img {
+    height: 50px; /* Ajuste o tamanho do seu logo */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+.menu a:hover {
+    color: var(--cor-primaria);
+}
+
+.hero {
+    background-image: url('images/hero-image.jpg'); /* Sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 4rem 2rem;  /*Mais padding para telas menores*/
+    color: var(--cor-branca);
+}
+.hero h1{
+  font-size: 2.5rem; /*Aumentei um pouco o tamanho da fonte*/
+  margin-bottom: 1rem;
+
+}
+.hero p{
+  font-size: 1.2rem; /*Aumentei um pouco o tamanho da fonte*/
+  margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darken(var(--cor-primaria), 10%); /* Escurece um pouco no hover */
+}
+
+/* Estilos das Seções (main) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 2rem;
 }
 
 section {
-    margin-bottom: 2rem;
+    padding: 4rem 0; /* Espaçamento vertical */
 }
 
-h1, h2 {
-    color: #333;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--cor-primaria);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Estilos da Seção "Sobre" */
+.sobre p {
+    margin-bottom: 1rem;
 }
 
-li {
+/* Estilos da Seção "Tecnologias" */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-item {
+    background-color: var(--cor-branca);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tech-item img {
+    width: 80px; /* Tamanho dos ícones */
+    margin-bottom: 1rem;
+}
+
+.tech-item h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: var(--cor-primaria);
 }
 
+/* Estilos da Seção "Contato" */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilos do Rodapé (Footer) */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--cor-texto);
+    color: var(--cor-branca);
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+/* Media Queries (Responsividade) */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde o menu em telas menores */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do seu cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-branca);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.active {
+        display: flex; /* Mostra o menu quando a classe 'active' é adicionada (com JavaScript, por exemplo) */
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--cor-fundo);
+    }
+    .menu a{
+        display: block; /*Ocupar a largura total*/
+        padding: 1rem;
+    }
+
+    .hero{
+      padding: 3rem 1rem; /*Reduz um pouco o padding em telas menores*/
+    }
+    .hero h1{
+      font-size: 2rem;
+    }
+    .hero p{
+      font-size: 1rem;
+    }
+
+    nav{
+      flex-direction: column; /*O logo e menu ficam um abaixo do outro*/
+      align-items: stretch; /*Ocupam toda a largura*/
+    }
+    .logo{
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+     /* Hamburger menu (opcional, requer JavaScript para funcionar) */
+    .menu-toggle {
+        display: block; /* Mostra o botão do menu em telas menores */
+        cursor: pointer;
+        padding: 10px;
+    }
+    .bar{
+        width: 25px;
+        height: 3px;
+        background-color: var(--cor-texto);
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+     /* Adicione as classes para o efeito do hamburger (X) se for usar JS */
+     .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Para o grid de tecnologias */
+    .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta o grid em telas menores */
+    }
+    .tech-item {
+        padding: 1.5rem;
+    }
+
+}
+
+@media (max-width: 480px) { /*Para telas ainda menores*/
+    .tech-grid {
+      grid-template-columns: 1fr;  /* Uma coluna em telas muito pequenas*/
+    }
 }
