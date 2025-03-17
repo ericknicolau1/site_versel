@@ -3,33 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Teste Vercel</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Tecnologia Inovadora</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Meu Site!</h1>
-        <p>Este é um exemplo de site simples.</p>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="images/logo.png" alt="Logo da Empresa"></a>  </div>
+            <ul class="menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>O Futuro da Tecnologia</h1>
+            <p>Explore as últimas tendências e inovações que estão moldando o mundo.</p>
+            <a href="#tecnologias" class="button">Descubra Mais</a>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Sobre Nós</h2>
-            <p>Somente testando.....</p>
+        <section id="sobre" class="sobre">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma equipe apaixonada por tecnologia e inovação. Nosso objetivo é trazer as soluções mais avançadas para você e sua empresa. Acreditamos que a tecnologia pode transformar o mundo e estamos aqui para fazer parte dessa transformação.</p>
+                <p>Com anos de experiência no mercado, nossa equipe multidisciplinar está preparada para enfrentar os desafios mais complexos e entregar resultados excepcionais.  Investimos constantemente em pesquisa e desenvolvimento para garantir que estamos sempre na vanguarda da tecnologia.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>Serviços</h2>
-            <ul>
-                <li>Web Design</li>
-                <li>Desenvolvimento Web</li>
-                <li>Consultoria</li>
-            </ul>
+        <section id="tecnologias" class="tecnologias">
+            <div class="container">
+                <h2>Nossas Tecnologias</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <img src="images/tech-icon1.png" alt="Ícone de Inteligência Artificial">
+                        <h3>Inteligência Artificial</h3>
+                        <p>Desenvolvemos soluções de IA para otimizar processos, automatizar tarefas e gerar insights valiosos.</p>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/tech-icon2.png" alt="Ícone de Cloud Computing">
+                        <h3>Cloud Computing</h3>
+                        <p>Oferecemos serviços de cloud computing para escalabilidade, segurança e flexibilidade.</p>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/tech-icon3.png" alt="Ícone de Desenvolvimento Web">
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Criamos websites modernos, responsivos e de alta performance, focados na experiência do usuário.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Estamos prontos para ouvir suas ideias e necessidades. Preencha o formulário abaixo e entraremos em contato em breve.</p>
+                <form action="#" method="post">  <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button">Enviar Mensagem</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Meu Site. Todos os direitos reservados no futuro.</p>
+        <p>&copy; 2023 Tecnologia Inovadora. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
